@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>liuyydi</title>
+  <title>仿写数组对象 | liuyydi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录点滴">
-<meta property="og:type" content="website">
-<meta property="og:title" content="liuyydi">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="仿写数组对象prototype给某个类添加属性或方法12var a=[1,2,3];var b=[4,5,6]; 数组对象 push | pop | shift | unshift | reverse | splice | join | slice给数组类（所有的数组对象）添加myPush方法123456789101112Array.prototype.myPush=function()&amp;#123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="仿写数组对象">
+<meta property="og:url" content="http://yoursite.com/2017/11/13/仿写数组对象/index.html">
 <meta property="og:site_name" content="liuyydi">
-<meta property="og:description" content="记录点滴">
+<meta property="og:description" content="仿写数组对象prototype给某个类添加属性或方法12var a=[1,2,3];var b=[4,5,6]; 数组对象 push | pop | shift | unshift | reverse | splice | join | slice给数组类（所有的数组对象）添加myPush方法123456789101112Array.prototype.myPush=function()&amp;#123">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-14T14:04:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="liuyydi">
-<meta name="twitter:description" content="记录点滴">
+<meta name="twitter:title" content="仿写数组对象">
+<meta name="twitter:description" content="仿写数组对象prototype给某个类添加属性或方法12var a=[1,2,3];var b=[4,5,6]; 数组对象 push | pop | shift | unshift | reverse | splice | join | slice给数组类（所有的数组对象）添加myPush方法123456789101112Array.prototype.myPush=function()&amp;#123">
   
     <link rel="alternate" href="/atom.xml" title="liuyydi" type="application/atom+xml">
   
@@ -67,73 +68,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-仿写字符串对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/14/仿写字符串对象/" class="article-date">
-  <time datetime="2017-11-14T14:02:18.000Z" itemprop="datePublished">2017-11-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/14/仿写字符串对象/">仿写字符串对象</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="仿写字符串对象"><a href="#仿写字符串对象" class="headerlink" title="仿写字符串对象"></a><font style="color: #8D0000">仿写字符串对象</font></h3><p>prototype给某个类添加属性或方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var str1=&quot;How are you? I&apos;m fine. You are welcome!&quot;;</span><br></pre></td></tr></table></figure></p>
-<h5 id="字符串类型-concat-replace-split-substr-subString-search"><a href="#字符串类型-concat-replace-split-substr-subString-search" class="headerlink" title="字符串类型 concat | replace | split | substr | subString | search"></a>字符串类型 <font style="color: #8D0000;font-size: 20px;">concat | replace | split | substr | subString | search</font></h5><p><font style="color: #8000D0;">给字符串类（所有的字符串对象）添加strConcat方法</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String.prototype.strConcat=function(str)&#123;</span><br><span class="line">	var res = this + str;</span><br><span class="line">	return res;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str1.strConcat(&quot;123&quot;));</span><br></pre></td></tr></table></figure></p>
-<p><font style="color: #8000D0;">给字符串类（所有的字符串对象）添加strSubstr方法</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String.prototype.strSubstr=function(index,length)&#123;</span><br><span class="line">	var str=&apos;&apos;;</span><br><span class="line">	for(var i=index;i&lt;index+length;i++)&#123;</span><br><span class="line">		str+=this.charAt(i);</span><br><span class="line">	&#125;</span><br><span class="line">	return str;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str1.strSubstr(4,5));</span><br></pre></td></tr></table></figure></p>
-<p><font style="color: #8000D0;">给字符串类（所有的字符串对象）添加strSubstring方法</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String.prototype.strSubstring=function(start,end)&#123;</span><br><span class="line">	var str=&apos;&apos;;</span><br><span class="line">	for(var i=start;i&lt;end;i++)&#123;</span><br><span class="line">		str+=this.charAt(i);</span><br><span class="line">	&#125;</span><br><span class="line">	return str;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str1.strSubstring(4,6));</span><br></pre></td></tr></table></figure></p>
-<p><font style="color: #8000D0;">给字符串类（所有的字符串对象）添加strSplit方法</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">String.prototype.strSplit=function(str)&#123;</span><br><span class="line">	// 用来存放新数组</span><br><span class="line">	var newArr=[];</span><br><span class="line">	// 用来存放分隔符在this中的位置</span><br><span class="line">	var arr1=[];</span><br><span class="line">	// 用来遍历数组</span><br><span class="line">	var arr=[];</span><br><span class="line">	for(var i=0;i&lt;this.length;i++)&#123;</span><br><span class="line">		arr[i]=&quot;&quot;;</span><br><span class="line">		// 把this按照分隔符的长度，每个字符往后遍历str.length个字符，</span><br><span class="line">		for(var j=i;j&lt;i+str.length;j++)&#123;</span><br><span class="line">			arr[i]+=this.charAt(j);</span><br><span class="line">		&#125;</span><br><span class="line">		// 在this中找到分割符</span><br><span class="line">		if(arr[i]==str)&#123;</span><br><span class="line">			// 分隔符在this中的位置</span><br><span class="line">			arr1.myPush(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	// 从0开始到第一个分割符之间的字符串</span><br><span class="line">	newArr[0]=&quot;&quot;;</span><br><span class="line">	for(var i=0;i&lt;arr1[0];i++)&#123;</span><br><span class="line">		newArr[0]+=this.charAt(i);</span><br><span class="line">	&#125;</span><br><span class="line">	// 从第一个分隔符到最后一个分割符，每两个分隔符之间的字符串</span><br><span class="line">	for(var i=0;i&lt;arr1.length-1;i++)&#123;</span><br><span class="line">		newArr[i+1]=&quot;&quot;;</span><br><span class="line">		for(var j=arr1[i]+str.length;j&lt;arr1[i+1];j++)&#123;</span><br><span class="line">			newArr[i+1]+=this.charAt(j);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	// 最后一个分隔符到原字符串之间的字符串</span><br><span class="line">	newArr[newArr.length]=&quot;&quot;;</span><br><span class="line">	for(var i=arr1[arr1.length-1]+str.length;i&lt;this.length;i++)&#123;</span><br><span class="line">		newArr[newArr.length-1]+=this.charAt(i);</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(arr1);</span><br><span class="line">	return newArr;</span><br><span class="line">&#125;</span><br><span class="line">console.log(str1.strSplit(&quot;are&quot;));</span><br><span class="line">console.log(str1.split(&apos;are&apos;));</span><br></pre></td></tr></table></figure></p>
-<p><font style="color: #8000D0;">给字符串类（所有的字符串对象）添加strReplace方法</font><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">	String.prototype.strReplace=function(a,b)&#123;</span><br><span class="line">		var newArr=[];</span><br><span class="line">		var str=&apos;&apos;;</span><br><span class="line">		newArr=this.strSplit(a);</span><br><span class="line">		for(var i=0;i&lt;newArr.length-1;i++)&#123;</span><br><span class="line">			str+=newArr[i]+b;</span><br><span class="line">		&#125;</span><br><span class="line">		str+=newArr[newArr.length-1];</span><br><span class="line">		return str;</span><br><span class="line">	&#125;</span><br><span class="line">	console.log(str1.strReplace(&quot;are&quot;,&quot;is&quot;));</span><br><span class="line">	console.log(str1.replace(&quot;are&quot;,&quot;is&quot;));</span><br><span class="line">```		</span><br><span class="line">&lt;font style=&quot;color: #8000D0;&quot;&gt;给字符串类（所有的字符串对象）添加strSearch方法&lt;/font&gt;</span><br></pre></td></tr></table></figure></p>
-<pre><code>String.prototype.strSearch=function(str){
-    // 用来存放分隔符在this中的位置
-    var arr1=[];
-    // 用来遍历数组
-    var arr=[];
-    for(var i=0;i&lt;this.length;i++){
-        arr[i]=&quot;&quot;;
-        // 把this按照分隔符的长度，每个字符往后遍历str.length个字符，
-        for(var j=i;j&lt;i+str.length;j++){
-            arr[i]+=this.charAt(j);
-        }
-        // 在this中找到分割符
-        if(arr[i]==str){
-            // 分隔符在this中的位置
-            arr1.myPush(i);
-            break;
-        }
-    }
-    return arr1;
-}
-console.log(str1.strSearch(&quot;are&quot;));
-</code></pre><p>```</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cj9zp2p300001layoehkkc5pl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-仿写数组对象" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-仿写数组对象" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/13/仿写数组对象/" class="article-date">
   <time datetime="2017-11-13T12:26:25.000Z" itemprop="datePublished">2017-11-13</time>
@@ -146,8 +81,8 @@ console.log(str1.strSearch(&quot;are&quot;));
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/仿写数组对象/">仿写数组对象</a>
+    <h1 class="article-title" itemprop="name">
+      仿写数组对象
     </h1>
   
 
@@ -174,55 +109,28 @@ console.log(str1.strSearch(&quot;are&quot;));
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/13/hello-world/" class="article-date">
-  <time datetime="2017-11-13T12:17:34.000Z" itemprop="datePublished">2017-11-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2017/11/14/仿写字符串对象/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          仿写字符串对象
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2017/11/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cj9zp2p2w0000layo6b8qxb5u" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         

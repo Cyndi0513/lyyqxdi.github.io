@@ -5,17 +5,17 @@
   
   <title>js事件兼容写法 | liuyydi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js事件兼容各个浏览器的写法绑定事件兼容各个浏览器的写法 参数：     element：代表要绑定事件的元素     type：要绑定的事件名，(不含“on”)     fn：绑定事件的函数123456789101112131415	function addEvent(element,type,fn)&amp;#123;		if(element.addEventListener)&amp;#123;			ele">
+  <meta name="description" content="js事件兼容各个浏览器的写法绑定事件兼容各个浏览器的写法 参数：     element：代表要绑定事件的元素     type：要绑定的事件名，(不含“on”)     fn：绑定事件的函数12345678910111213141516	function addEvent(element,type,fn)&amp;#123;		if(element.addEventListener)&amp;#123;			e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js事件兼容写法">
 <meta property="og:url" content="http://yoursite.com/2017/11/16/js事件兼容写法/index.html">
 <meta property="og:site_name" content="liuyydi">
-<meta property="og:description" content="js事件兼容各个浏览器的写法绑定事件兼容各个浏览器的写法 参数：     element：代表要绑定事件的元素     type：要绑定的事件名，(不含“on”)     fn：绑定事件的函数123456789101112131415	function addEvent(element,type,fn)&amp;#123;		if(element.addEventListener)&amp;#123;			ele">
+<meta property="og:description" content="js事件兼容各个浏览器的写法绑定事件兼容各个浏览器的写法 参数：     element：代表要绑定事件的元素     type：要绑定的事件名，(不含“on”)     fn：绑定事件的函数12345678910111213141516	function addEvent(element,type,fn)&amp;#123;		if(element.addEventListener)&amp;#123;			e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-16T14:36:58.000Z">
+<meta property="og:updated_time" content="2017-11-16T14:39:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js事件兼容写法">
-<meta name="twitter:description" content="js事件兼容各个浏览器的写法绑定事件兼容各个浏览器的写法 参数：     element：代表要绑定事件的元素     type：要绑定的事件名，(不含“on”)     fn：绑定事件的函数123456789101112131415	function addEvent(element,type,fn)&amp;#123;		if(element.addEventListener)&amp;#123;			ele">
+<meta name="twitter:description" content="js事件兼容各个浏览器的写法绑定事件兼容各个浏览器的写法 参数：     element：代表要绑定事件的元素     type：要绑定的事件名，(不含“on”)     fn：绑定事件的函数12345678910111213141516	function addEvent(element,type,fn)&amp;#123;		if(element.addEventListener)&amp;#123;			e">
   
     <link rel="alternate" href="/atom.xml" title="liuyydi" type="application/atom+xml">
   
@@ -91,7 +91,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="js事件兼容各个浏览器的写法"><a href="#js事件兼容各个浏览器的写法" class="headerlink" title="js事件兼容各个浏览器的写法"></a><font style="color: #8D0000">js事件兼容各个浏览器的写法</font></h3><p><font style="color: #8D0080;font-size: 20px;">绑定事件兼容各个浏览器的写法</font></p>
-<p><font style="color: #000088;font-size: 18px;">参数：</font><br>     element：代表要绑定事件的元素<br>     type：要绑定的事件名，(不含“on”)<br>     fn：绑定事件的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">	function addEvent(element,type,fn)&#123;</span><br><span class="line">		if(element.addEventListener)&#123;</span><br><span class="line">			element.addEventListener(type,fn,true);</span><br><span class="line">		&#125;else if(element.attachEvent)&#123;</span><br><span class="line">			element.attachEvent(&quot;on&quot;+type,fn);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			element[&quot;on&quot;+type]=fn;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">``` </span><br><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;移除事件兼容各个浏览器的写法&lt;/font&gt;</span><br><span class="line">&lt;font style=&quot;color: #000088;font-size: 18px;&quot;&gt;参数：&lt;/font&gt;</span><br><span class="line"> 	element：代表要绑定事件的元素</span><br><span class="line">	type：要绑定的事件名，(不含“on”)</span><br><span class="line"> 	fn：绑定事件的函数</span><br></pre></td></tr></table></figure></p>
+<p><font style="color: #000088;font-size: 18px;">参数：</font><br>     element：代表要绑定事件的元素<br>     type：要绑定的事件名，(不含“on”)<br>     fn：绑定事件的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">	function addEvent(element,type,fn)&#123;</span><br><span class="line">		if(element.addEventListener)&#123;</span><br><span class="line">			element.addEventListener(type,fn,true);</span><br><span class="line">		&#125;else if(element.attachEvent)&#123;</span><br><span class="line">			element.attachEvent(&quot;on&quot;+type,fn);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			element[&quot;on&quot;+type]=fn;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;移除事件兼容各个浏览器的写法&lt;/font&gt;</span><br><span class="line">&lt;font style=&quot;color: #000088;font-size: 18px;&quot;&gt;参数：&lt;/font&gt;</span><br><span class="line"> 	element：代表要绑定事件的元素</span><br><span class="line">	type：要绑定的事件名，(不含“on”)</span><br><span class="line"> 	fn：绑定事件的函数</span><br></pre></td></tr></table></figure></p>
 <pre><code>function removeEvent(element,type,fn){
     if(element.removeEventListener){
         element.removeEventListener(type,fn,false);
@@ -101,7 +101,7 @@
         element[&quot;on&quot;+type]=null;
     }
 }
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;取消冒泡兼容各个浏览器的写法&lt;/font&gt;</span><br><span class="line">&lt;font style=&quot;color: #000088;font-size: 18px;&quot;&gt;参数：&lt;/font&gt;</span><br><span class="line"> 	ev: 要取消冒泡的事件对象</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;取消冒泡兼容各个浏览器的写法&lt;/font&gt;</span><br><span class="line">&lt;font style=&quot;color: #000088;font-size: 18px;&quot;&gt;参数：&lt;/font&gt;</span><br><span class="line"> 	ev: 要取消冒泡的事件对象</span><br></pre></td></tr></table></figure>
 <pre><code>function stopBubble(ev){
     if(ev &amp;&amp; ev.stopPropagation){
         ev.stopPropagation();
@@ -109,7 +109,7 @@
         ev.cancelBubble=true;
     }
 }
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;获取计算后样式兼容的写法&lt;/font&gt;</span><br><span class="line">&lt;font style=&quot;color: #000088;font-size: 18px;&quot;&gt;参数：&lt;/font&gt;</span><br><span class="line">	element: 要获取样式的元素</span><br><span class="line">	key: 要获取的样式</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;获取计算后样式兼容的写法&lt;/font&gt;</span><br><span class="line">&lt;font style=&quot;color: #000088;font-size: 18px;&quot;&gt;参数：&lt;/font&gt;</span><br><span class="line">	element: 要获取样式的元素</span><br><span class="line">	key: 要获取的样式</span><br></pre></td></tr></table></figure>
 <pre><code>function getStyle(element,key,wei){
     if(element.currentStyle){
         return element.currentStyle[key];
@@ -120,7 +120,7 @@
         return getComputedStyle(element,wei)[key];
     }
 }
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;取消冒泡兼容各个浏览器的写法&lt;/font&gt;</span><br></pre></td></tr></table></figure>
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;font style=&quot;color: #8D0080;font-size: 20px;&quot;&gt;取消冒泡兼容各个浏览器的写法&lt;/font&gt;</span><br></pre></td></tr></table></figure>
 <pre><code>function addMousewheel(ele,fn){
     if(navigator.userAgent.indexOf(&quot;Firefox&quot;)!=-1){
          火狐
@@ -135,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja2kxnwd0001deyoarmn4f8e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja2l0cub0001gqyoeoqkxagz" class="article-share-link">Share</a>
       
       
     </footer>

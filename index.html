@@ -69,6 +69,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js事件兼容写法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/16/js事件兼容写法/" class="article-date">
+  <time datetime="2017-11-16T13:58:30.000Z" itemprop="datePublished">2017-11-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="js事件兼容各个浏览器的写法"><a href="#js事件兼容各个浏览器的写法" class="headerlink" title="js事件兼容各个浏览器的写法"></a><font style="color: #8D0000">js事件兼容各个浏览器的写法</font></h3><font style="color: #8D0080;font-size: 20px;">绑定事件兼容各个浏览器的写法</font><br><font style="color: #000088;">参数：</font><br>     element：代表要绑定事件的元素<br>     type：要绑定的事件名，(不含“on”)<br>     fn：绑定事件的函数<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function addEvent(element,type,fn)&#123;</span><br><span class="line">	if(element.addEventListener)&#123;</span><br><span class="line">		element.addEventListener(type,fn,true);</span><br><span class="line">	&#125;else if(element.attachEvent)&#123;</span><br><span class="line">		element.attachEvent(&quot;on&quot;+type,fn);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		element[&quot;on&quot;+type]=fn;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font style="color: #8D0080;font-size: 20px;">移除事件兼容各个浏览器的写法</font><br><font style="color: #000088;">参数：</font><br>     element：代表要绑定事件的元素<br>    type：要绑定的事件名，(不含“on”)<br>     fn：绑定事件的函数<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function removeEvent(element,type,fn)&#123;</span><br><span class="line">	if(element.removeEventListener)&#123;</span><br><span class="line">		element.removeEventListener(type,fn,false);</span><br><span class="line">	&#125;else if(element.detachEvent)&#123;</span><br><span class="line">		element.detachEvent(&quot;on&quot;+type,fn);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		element[&quot;on&quot;+type]=null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font style="color: #8D0080;font-size: 20px;">取消冒泡兼容各个浏览器的写法</font><br><font style="color: #000088;">参数：</font><br>     ev: 要取消冒泡的事件对象<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function stopBubble(ev)&#123;</span><br><span class="line">	if(ev &amp;&amp; ev.stopPropagation)&#123;</span><br><span class="line">		ev.stopPropagation();</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		ev.cancelBubble=true;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font style="color: #8D0080;font-size: 20px;">获取计算后样式兼容的写法</font><br><font style="color: #000088;">参数：</font><br>    element: 要获取样式的元素<br>    key: 要获取的样式<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getStyle(element,key,wei)&#123;</span><br><span class="line">	if(element.currentStyle)&#123;</span><br><span class="line">		return element.currentStyle[key];</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		if(wei==undefined)&#123;</span><br><span class="line">			wei=null;</span><br><span class="line">		&#125;</span><br><span class="line">		return getComputedStyle(element,wei)[key];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><font style="color: #8D0080;font-size: 20px;">取消冒泡兼容各个浏览器的写法</font>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function addMousewheel(ele,fn)&#123;</span><br><span class="line">	if(navigator.userAgent.indexOf(&quot;Firefox&quot;)!=-1)&#123;</span><br><span class="line">		 火狐</span><br><span class="line">		ele.addEventListener(&quot;DOMMouseScroll&quot;,fn,false);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		 谷歌、IE</span><br><span class="line">		ele.onmousewheel=fn;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja2jsprd00010tyosfbavhnn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-仿写字符串对象" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/14/仿写字符串对象/" class="article-date">
@@ -102,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja2jgfms0000luyoyy2ljko7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja2jsprf00020tyo0fuo7mu4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -147,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja2jgfn00002luyo61k73pzk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja2jsprg00030tyojegv17r2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja2jgfmy0001luyohhf1mtf2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja2jspr800000tyocgru5z70" class="article-share-link">Share</a>
       
       
     </footer>
@@ -230,6 +268,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
+          </li>
         
           <li>
             <a href="/2017/11/14/仿写字符串对象/">仿写字符串对象</a>

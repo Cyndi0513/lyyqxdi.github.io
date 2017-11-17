@@ -101,12 +101,12 @@
 <h3 id="获取计算后样式兼容的写法"><a href="#获取计算后样式兼容的写法" class="headerlink" title="获取计算后样式兼容的写法"></a><font style="color:#8d0000;">获取计算后样式兼容的写法</font></h3><h5 id="参数：-3"><a href="#参数：-3" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">element: </font>要获取样式的元素</p>
 <p><font style="color: #000088;">key: </font>要获取的样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getStyle(element,key,wei)&#123;</span><br><span class="line">	if(element.currentStyle)&#123;</span><br><span class="line">		return element.currentStyle[key];</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		if(wei==undefined)&#123;</span><br><span class="line">			wei=null;</span><br><span class="line">		&#125;</span><br><span class="line">		return getComputedStyle(element,wei)[key];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="滚轮事件兼容各个浏览器的写法"><a href="#滚轮事件兼容各个浏览器的写法" class="headerlink" title="滚轮事件兼容各个浏览器的写法"></a><font style="color:#8d0000;">滚轮事件兼容各个浏览器的写法</font></h3><h5 id="参数：-4"><a href="#参数：-4" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">ele: </font>要绑定滚轮事件的元素</p>
-<p><font style="color: #000088;">fn: </font>滚轮事件要执行的函数<br>function addMousewheel(ele,fn){<br>    if(navigator.userAgent.indexOf(“Firefox”)!=-1){<br>        // 火狐<br>        ele.addEventListener(“DOMMouseScroll”,fn,false);<br>    }else{<br>        // 谷歌、IE<br>        ele.onmousewheel=fn;<br>    }<br>}</p>
+<p><font style="color: #000088;">fn: </font>滚轮事件要执行的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function addMousewheel(ele,fn)&#123;</span><br><span class="line">	if(navigator.userAgent.indexOf(&quot;Firefox&quot;)!=-1)&#123;</span><br><span class="line">		// 火狐</span><br><span class="line">		ele.addEventListener(&quot;DOMMouseScroll&quot;,fn,false);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		// 谷歌、IE</span><br><span class="line">		ele.onmousewheel=fn;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja3wgh9s0001eayoezatxjli" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja3whwes0001ggyorry009h6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -149,7 +149,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja3wgh9v0002eayosetqa3zo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja3whwev0002ggyohcizdpde" class="article-share-link">Share</a>
       
       
     </footer>
@@ -194,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja3wgh9w0003eayojoqoeq7b" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja3whwew0003ggyofbosqj21" class="article-share-link">Share</a>
       
       
     </footer>
@@ -239,7 +239,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja3wgh9k0000eayo88syef10" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja3whweo0000ggyooufsrq1x" class="article-share-link">Share</a>
       
       
     </footer>

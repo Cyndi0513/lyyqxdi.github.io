@@ -91,11 +91,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>json是一种数据交换格式，而jsonp是json的一种使用模式，是基于json。<br>简单说就是json是协议，而jsonp是使用这种协议的方法。（json才是目的，jsonp只是手段。）<br>json返回的是一串数据，而jsonp返回的是脚本代码(包含一个函数调用)。</p>
+<h4 id="json"><a href="#json" class="headerlink" title="json"></a>json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type: &quot;post&quot;, //数据提交类型</span><br><span class="line">	url: &quot;http://10.80.1.220::8080/PHP/day6/danmu.php&quot;, //请求地址</span><br><span class="line">	data: &#123;word:&quot;abc&quot;,username:&quot;liudi&quot;&#125;, //发送数据</span><br><span class="line">	dataType: &quot;json&quot;, //返回数据的类型,json不支持跨域请求</span><br><span class="line">	async: true, //是否异步，true为异步</span><br><span class="line">	//success为数据加载完成后的回调函数</span><br><span class="line">	success: function(data)&#123;</span><br><span class="line">		console.log(data);</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;get&quot;,</span><br><span class="line">	url:&quot;http://10.80.1.220::8080/PHP/day6/my.php&quot;,</span><br><span class="line">	async:true,</span><br><span class="line">	data:&#123;&#125;,</span><br><span class="line">	dataType: &quot;jsonp&quot;,//函数名包裹json串,现在是jsonp请求，这个时候，jquery使用的是script标签发送请求</span><br><span class="line">	jsonp: &quot;callmyphp&quot;, </span><br><span class="line">	jsonpCallback: &quot;show&quot;,//自定义的回调函数名</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja3xs8wy0001w2yo5kfzbg7r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja52k7ky0000rsyocoof3msd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja3xs8x40005w2yocox7eb52" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja52k7l60003rsyopjvnbo4f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja3xs8x00002w2yo07ez3sia" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja52k7l50002rsyo010b7ojo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +223,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja3xs8x20003w2yogjqdw9k3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja52k7l90005rsyohedqmj2j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -266,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja3xs8x30004w2yokruytq3m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja52k7l20001rsyor3b6mqtx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -311,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja3xs8wu0000w2yo27nqwz34" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja52k7l70004rsyo7kjsu5lm" class="article-share-link">Share</a>
       
       
     </footer>

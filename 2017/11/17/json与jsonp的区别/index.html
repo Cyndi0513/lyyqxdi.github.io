@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="liuyydi">
 <meta property="og:description" content="json是一种数据交换格式，而jsonp是json的一种使用模式，是基于json。简单说就是json是协议，而jsonp是使用这种协议的方法。（json才是目的，jsonp只是手段。）json返回的是一串数据，而jsonp返回的是脚本代码(包含一个函数调用)。 json1234567891011$.ajax(&amp;#123;	type: &amp;quot;post&amp;quot;, //数据提交类型	url:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-18T08:25:48.000Z">
+<meta property="og:updated_time" content="2017-11-18T09:03:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="json与jsonp的区别">
 <meta name="twitter:description" content="json是一种数据交换格式，而jsonp是json的一种使用模式，是基于json。简单说就是json是协议，而jsonp是使用这种协议的方法。（json才是目的，jsonp只是手段。）json返回的是一串数据，而jsonp返回的是脚本代码(包含一个函数调用)。 json1234567891011$.ajax(&amp;#123;	type: &amp;quot;post&amp;quot;, //数据提交类型	url:">
@@ -92,11 +92,11 @@
       
         <p>json是一种数据交换格式，而jsonp是json的一种使用模式，是基于json。<br>简单说就是json是协议，而jsonp是使用这种协议的方法。（json才是目的，jsonp只是手段。）<br>json返回的是一串数据，而jsonp返回的是脚本代码(包含一个函数调用)。</p>
 <h4 id="json"><a href="#json" class="headerlink" title="json"></a>json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type: &quot;post&quot;, //数据提交类型</span><br><span class="line">	url: &quot;http://10.80.1.220::8080/PHP/day6/danmu.php&quot;, //请求地址</span><br><span class="line">	data: &#123;word:&quot;abc&quot;,username:&quot;liudi&quot;&#125;, //发送数据</span><br><span class="line">	dataType: &quot;json&quot;, //返回数据的类型,json不支持跨域请求</span><br><span class="line">	async: true, //是否异步，true为异步</span><br><span class="line">	//success为数据加载完成后的回调函数</span><br><span class="line">	success: function(data)&#123;</span><br><span class="line">		console.log(data);</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;get&quot;,</span><br><span class="line">	url:&quot;http://10.80.1.220::8080/PHP/day6/my.php&quot;,</span><br><span class="line">	async:true,</span><br><span class="line">	data:&#123;&#125;,</span><br><span class="line">	dataType: &quot;jsonp&quot;,//函数名包裹json串,现在是jsonp请求，这个时候，jquery使用的是script标签发送请求</span><br><span class="line">	jsonp: &quot;callmyphp&quot;, </span><br><span class="line">	jsonpCallback: &quot;show&quot;,//自定义的回调函数名</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;get&quot;,</span><br><span class="line">	url:&quot;my.php&quot;,</span><br><span class="line">	async:true,</span><br><span class="line">	data:&#123;&#125;,</span><br><span class="line">	dataType: &quot;jsonp&quot;,//函数名包裹json串,现在是jsonp请求，这个时候，jquery使用的是script标签发送请求</span><br><span class="line">	jsonp: &quot;callmyphp&quot;, </span><br><span class="line">	jsonpCallback: &quot;show&quot;,//自定义的回调函数名</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja53buhj0002rcyoke8q7p1m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja543b0e0001ndyon492akuf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -105,11 +105,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/11/18/css引入与css选择器/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/18/图片转换为base64编码的好处/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          css引入与css选择器
+          图片转换为base64编码的好处
         
       </div>
     </a>
@@ -158,19 +158,19 @@
           </li>
         
           <li>
-            <a href="/2017/11/18/常见标签1/">常见标签1</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/18/背景设置/">背景设置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/18/css引入与css选择器/">css引入与css选择器</a>
-          </li>
-        
-          <li>
             <a href="/2017/11/17/json与jsonp的区别/">json与jsonp的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/17/分页导航/">分页导航</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/14/仿写字符串对象/">仿写字符串对象</a>
           </li>
         
       </ul>

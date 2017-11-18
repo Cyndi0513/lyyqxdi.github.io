@@ -91,119 +91,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>将图片转换为base64编码最常见的应用应该就是在将网页中的一些图片转换为base64编码可以实现网页图片在网速不好的时候先于内容加载和减少HTTP的请求次数来减少网站服务器的负担。</p>
+<h4 id="1-主要：减少了HTTP请求"><a href="#1-主要：减少了HTTP请求" class="headerlink" title="1.主要：减少了HTTP请求"></a>1.主要：减少了HTTP请求</h4><p>我们都知道，我们的网站采用的都是HTTP协议，而HTTP协议是一种无状态的链接，就是连接和传输后都会断开连接节省资源。此时解决的方法就是尽量的减少HTTP请求，此时base64编码可以将图片添加到css中，实现请求css即可下载下来图片，减少了在此请求图片的请求。当然减少HTTP请求次数的方法还有很多，如css sprite技术，将网页中的小图片拼在一张大图片中，下载时只需要一次完整的HTTP请求就可以，减少了请求次数。</p>
+<h4 id="2、提前加载图片的应用"><a href="#2、提前加载图片的应用" class="headerlink" title="2、提前加载图片的应用"></a>2、提前加载图片的应用</h4><p>这个大家可以去看一下天猫主页的css代码，大家可能没注意到，在我们使用网速不好时候的网络去访问天猫的时候，在页面没有完全加载出来的时候就会出现一个“小猫”的等待图标，增加了用户体验。其实现的原理就是将那张图片使用base64编码放到css中，因为我们都知道，css是在html头部引用的，要优先于下面的内容被加载，所以在网速不好的时候就会出现这种效果。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cja53buhn0006rcyotav5cf3c" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-常见标签1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/18/常见标签1/" class="article-date">
-  <time datetime="2017-11-18T08:33:39.000Z" itemprop="datePublished">2017-11-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/常见标签1/">常见标签1</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/常见标签1/" data-id="cja53buhn0007rcyo68pp7qvi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-背景设置" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/18/背景设置/" class="article-date">
-  <time datetime="2017-11-18T08:32:56.000Z" itemprop="datePublished">2017-11-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/背景设置/">背景设置</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/背景设置/" data-id="cja53buho0008rcyodr5o4w08" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-css引入与css选择器" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/18/css引入与css选择器/" class="article-date">
-  <time datetime="2017-11-18T08:32:21.000Z" itemprop="datePublished">2017-11-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/css引入与css选择器/">css引入与css选择器</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/css引入与css选择器/" data-id="cja53buhc0000rcyo1c6xon6l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cja543b0j0005ndyoeelmlnae" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,11 +132,11 @@
       
         <p>json是一种数据交换格式，而jsonp是json的一种使用模式，是基于json。<br>简单说就是json是协议，而jsonp是使用这种协议的方法。（json才是目的，jsonp只是手段。）<br>json返回的是一串数据，而jsonp返回的是脚本代码(包含一个函数调用)。</p>
 <h4 id="json"><a href="#json" class="headerlink" title="json"></a>json</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type: &quot;post&quot;, //数据提交类型</span><br><span class="line">	url: &quot;http://10.80.1.220::8080/PHP/day6/danmu.php&quot;, //请求地址</span><br><span class="line">	data: &#123;word:&quot;abc&quot;,username:&quot;liudi&quot;&#125;, //发送数据</span><br><span class="line">	dataType: &quot;json&quot;, //返回数据的类型,json不支持跨域请求</span><br><span class="line">	async: true, //是否异步，true为异步</span><br><span class="line">	//success为数据加载完成后的回调函数</span><br><span class="line">	success: function(data)&#123;</span><br><span class="line">		console.log(data);</span><br><span class="line">	&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;get&quot;,</span><br><span class="line">	url:&quot;http://10.80.1.220::8080/PHP/day6/my.php&quot;,</span><br><span class="line">	async:true,</span><br><span class="line">	data:&#123;&#125;,</span><br><span class="line">	dataType: &quot;jsonp&quot;,//函数名包裹json串,现在是jsonp请求，这个时候，jquery使用的是script标签发送请求</span><br><span class="line">	jsonp: &quot;callmyphp&quot;, </span><br><span class="line">	jsonpCallback: &quot;show&quot;,//自定义的回调函数名</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">	type:&quot;get&quot;,</span><br><span class="line">	url:&quot;my.php&quot;,</span><br><span class="line">	async:true,</span><br><span class="line">	data:&#123;&#125;,</span><br><span class="line">	dataType: &quot;jsonp&quot;,//函数名包裹json串,现在是jsonp请求，这个时候，jquery使用的是script标签发送请求</span><br><span class="line">	jsonp: &quot;callmyphp&quot;, </span><br><span class="line">	jsonpCallback: &quot;show&quot;,//自定义的回调函数名</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja53buhj0002rcyoke8q7p1m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja543b0e0001ndyon492akuf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -277,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja53buhl0004rcyolyk6uq1r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja543b0i0004ndyo98x62n4f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja53buhg0001rcyoj13ulwr5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja543b090000ndyo69l3j0sb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -367,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja53buhk0003rcyol16typ60" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja543b0g0002ndyobv7ykpfw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -412,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja53buhm0005rcyopq4yaysm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja543b0h0003ndyocis8sw1y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -458,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cja53buhp0009rcyoxvu27dhf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cja543b0k0006ndyotie4tjo8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -502,19 +397,19 @@
           </li>
         
           <li>
-            <a href="/2017/11/18/常见标签1/">常见标签1</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/18/背景设置/">背景设置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/18/css引入与css选择器/">css引入与css选择器</a>
-          </li>
-        
-          <li>
             <a href="/2017/11/17/json与jsonp的区别/">json与jsonp的区别</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/17/分页导航/">分页导航</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/14/仿写字符串对象/">仿写字符串对象</a>
           </li>
         
       </ul>

@@ -69,10 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-行、块、行块标签与盒模型" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/11/10/行、块、行块标签与盒模型/" class="article-date">
-  <time datetime="2017-11-10T08:31:59.000Z" itemprop="datePublished">2017-11-10</time>
+    <a href="/2017/11/13/hello-world/" class="article-date">
+  <time datetime="2017-11-13T12:17:34.000Z" itemprop="datePublished">2017-11-13</time>
 </a>
     
   </div>
@@ -83,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/10/行、块、行块标签与盒模型/">行、块、行块标签与盒模型</a>
+      <a class="article-title" href="/2017/11/13/hello-world/">Hello World</a>
     </h1>
   
 
@@ -91,21 +91,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="块级标签-block-，行级标签-inline-，行块标签-inline-block"><a href="#块级标签-block-，行级标签-inline-，行块标签-inline-block" class="headerlink" title="块级标签(block)，行级标签(inline)，行块标签(inline-block):"></a>块级标签(block)，行级标签(inline)，行块标签(inline-block):</h4><h5 id="块级标签-block-的特点有："><a href="#块级标签-block-的特点有：" class="headerlink" title="块级标签(block)的特点有："></a>块级标签(block)的特点有：</h5><p>1.独占一行<br>2.可以设置尺寸<br>3.没有明确宽度和高度是，宽度由父级决定，高度由内容决定<br>4.支持margin和padding</p>
-<h5 id="行级标签-inline-的特点："><a href="#行级标签-inline-的特点：" class="headerlink" title="行级标签(inline)的特点："></a>行级标签(inline)的特点：</h5><p>1.不会独占一行，可以与其他行级元素同行排列<br>2.不支持尺寸设置<br>3.对左右margin和左右padding支持较好，上下margin和padding要慎用</p>
-<h5 id="行块标签-inline-block-的特点："><a href="#行块标签-inline-block-的特点：" class="headerlink" title="行块标签(inline-block)的特点："></a>行块标签(inline-block)的特点：</h5><p>支持盒模型，但不会独占一行</p>
-<h5 id="盒模型："><a href="#盒模型：" class="headerlink" title="盒模型："></a>盒模型：</h5><p>1.盒模型有外边距margin、边界border、内边距padding、内容尺寸(width/height)四个部分组成</p>
-<p>2.盒子模型分为标准盒模型与怪异盒模型</p>
-<h5 id="标准盒模型："><a href="#标准盒模型：" class="headerlink" title="标准盒模型："></a>标准盒模型：</h5><p>1.内容尺寸: width height </p>
-<p>2.盒子尺寸 : 内容尺寸 padding border</p>
-<p>3.区域尺寸：内容尺寸 padding border margin</p>
-<h5 id="怪异盒模型："><a href="#怪异盒模型：" class="headerlink" title="怪异盒模型："></a>怪异盒模型：</h5><pre><code>box-sizing: border-box / content-box;
-</code></pre><p>注意：盒子与盒子之间用margin 盒子内部用padding 盒子尺寸尽量用auto</p>
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/10/行、块、行块标签与盒模型/" data-id="cja52y7bi000a8tyo7plxqyrm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/hello-world/" data-id="cja5303440001bdyohsilfr5x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +164,7 @@
           </li>
         
           <li>
-            <a href="/2017/11/17/json与jsonp的区别/">json与jsonp的区别</a>
+            <a href="/2017/11/18/行、块、行块标签与盒模型/">行、块、行块标签与盒模型</a>
           </li>
         
       </ul>

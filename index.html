@@ -69,6 +69,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-pug模板" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/18/pug模板/" class="article-date">
+  <time datetime="2017-11-18T09:23:21.000Z" itemprop="datePublished">2017-11-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/18/pug模板/">pug模板</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="pug安装"><a href="#pug安装" class="headerlink" title="pug安装"></a>pug安装</h3><p>nodeJS —&gt; node环境<br> npm —&gt; 插件管理器 —&gt; 下载安装插件<br>【链接】Node.js下载地址： <a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a><br><img src="http://upload-images.jianshu.io/upload_images/7426647-f08d886904d0af27.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>点击下载 v6.11.2 LTS 稳定版<br><img src="http://upload-images.jianshu.io/upload_images/7426647-edb09a5f13b7d692.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>使用npm安装完成即可。需要安装pug命令行工具pug-cli　　<br>[注意]一定要全局安装pug-cli，否则无法正常编译 。<br>在终端命令输入：”node -v” | “npm -v” 结果如下即安装成功<br><img src="http://upload-images.jianshu.io/upload_images/7426647-104e8917f322d8d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在SublimeText中创建一个pug文件,如index.pug。</p>
+<h3 id="pug模板："><a href="#pug模板：" class="headerlink" title="pug模板："></a>pug模板：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		meta(charset=&quot;utf-8&quot;)</span><br><span class="line">		title pug的练习</span><br><span class="line">	body</span><br><span class="line">		h1 学习pug</span><br><span class="line">		div</span><br><span class="line">			a(href=&quot;###&quot;,class=&quot;baidu&quot;) 百度</span><br><span class="line">			//div(class=&quot;div1&quot;)</span><br><span class="line">		div#div1</span><br><span class="line">			div(id=&quot;div2&quot;)</span><br><span class="line">			p.</span><br><span class="line">				xxxxxx</span><br><span class="line">				xxxxxx</span><br><span class="line">				xxxxxx</span><br><span class="line">			span 你好</span><br><span class="line">				strong 哈哈</span><br></pre></td></tr></table></figure>
+<p>在终端命令找到pug所在目录，再输入命令” pug index.pug”输出结果，会得到一个相对应压缩的html文件。<br><img src="http://upload-images.jianshu.io/upload_images/7426647-e07beee6aa92dd25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>在终端命令找到pug所在目录，再输入命令” pug -P index.pug”输出结果，会得到一个相对应的标准html文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt; </span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;pug的练习&lt;/title&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1&gt;学习pug&lt;/h1&gt;</span><br><span class="line">    &lt;div&gt;&lt;a class=&quot;baidu&quot; href=&quot;###&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">      &lt;!--div(class=&quot;div1&quot;)--&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div id=&quot;div1&quot;&gt;</span><br><span class="line">      &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        xxxxxx</span><br><span class="line">        xxxxxx</span><br><span class="line">        xxxxxx</span><br><span class="line">      &lt;/p&gt;&lt;span&gt;你好&lt;strong&gt;哈哈&lt;/strong&gt;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在终端命令找到pug所在目录，再输入命令” pug -P -w index.pug”输出结果，会得到一个相对应的标准html文件并且可以实时监控该HTML文件。<br><img src="http://upload-images.jianshu.io/upload_images/7426647-a8c6849cce6ca92e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>注意：<br>在终端命令找到pug所在目录，再输入命令” pug -P -w *.pug”输出结果，会得到所有pug文件相对应的标准html文件并且可以实时监控所有HTML文件。</p>
+<p>在终端命令找到pug所在目录，再输入命令” pug -P index.pug -o xxx”输出结果，”-o”后面跟文件夹路径，pug文件会将html文件输出到指定文件夹中</p>
+<p>文件包含：包含（include）功能允许把另外的文件内容插入进来<img src="http://upload-images.jianshu.io/upload_images/7426647-066b000eff2db612.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>继承：extends<br>Pug 支持使用 block 和 extends 关键字进行模板的继承。一个称之为“块”（block）的代码块，可以被子模板覆盖、替换。这个过程是递归的。<br>(1)继承 <img src="http://upload-images.jianshu.io/upload_images/7426647-4d32062e8a499401.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>(2)继承后更改内容 <img src="http://upload-images.jianshu.io/upload_images/7426647-b29063860219df23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>[pug模板引擎 链接]：<a href="http://www.cnblogs.com/xiaohuochai/p/7222227.html" target="_blank" rel="external">http://www.cnblogs.com/xiaohuochai/p/7222227.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cja54mvzr0003aryoz1zbzfvo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-图片转换为base64编码的好处" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/18/图片转换为base64编码的好处/" class="article-date">
@@ -98,7 +144,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cja545gxl0005qjyopa14au7r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cja54mvzu0006aryor1na539n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -136,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja545gxb0000qjyotph1z3k2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja54mvzj0000aryov26do92t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -172,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja545gxk0004qjyodk4go0zy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja54mvzt0005aryoz6ottal9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja545gxg0001qjyov05aaic9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja54mvzo0001aryor4q03wph" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja545gxi0002qjyo7oco7egr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja54mvzq0002aryoyuvy1n3x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +353,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja545gxj0003qjyoaxycv50r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja54mvzs0004aryofk6drkxw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cja545gxm0006qjyosij2nucw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cja54mvzv0007aryo64jc3g0h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -393,6 +439,10 @@
       <ul>
         
           <li>
+            <a href="/2017/11/18/pug模板/">pug模板</a>
+          </li>
+        
+          <li>
             <a href="/2017/11/18/图片转换为base64编码的好处/">图片转换为base64编码的好处</a>
           </li>
         
@@ -406,10 +456,6 @@
         
           <li>
             <a href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/14/仿写字符串对象/">仿写字符串对象</a>
           </li>
         
       </ul>

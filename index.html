@@ -69,6 +69,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript中的内存泄漏以及如何处理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/21/JavaScript中的内存泄漏以及如何处理/" class="article-date">
+  <time datetime="2017-11-21T13:27:04.000Z" itemprop="datePublished">2017-11-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/21/JavaScript中的内存泄漏以及如何处理/">JavaScript中的内存泄漏以及如何处理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>随着现代编程语言功能越来越成熟、复杂，内存管理也容易被大家忽略。本文将讨论Javascript中的内存泄露以及如何处理，方便大家在使用JavaScript编码时，更好的应对内存泄露带来的问题。</p>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>当创建对象和字符串等时，JavaScript就会分配内存，并在不使用时自动释放内存，这种机制被称为垃圾收集。这种释放资源看似是“自动”的，但本质是混淆的，这也给JavaScript的开发人员产生了可以不关心内存管理的错误印象。其实这是一个大错误。</p>
+<h3 id="什么是内存泄露"><a href="#什么是内存泄露" class="headerlink" title="什么是内存泄露"></a>什么是内存泄露</h3><p>内存泄露是应用程序使用过的内存片段，在不再需要时，不能返回到操作系统或可用内存池中的情况。<br>编程语言有各自不同的内存管理方式。但是是否使用某一段内存，实际上是一个不可判定的问题。换句话说，只有开发人员明确的知道是否需要将一块内存返回给操作系统。</p>
+<h3 id="四种常见的JavaScript内存泄露"><a href="#四种常见的JavaScript内存泄露" class="headerlink" title="四种常见的JavaScript内存泄露"></a>四种常见的JavaScript内存泄露</h3><h4 id="1-全局变量"><a href="#1-全局变量" class="headerlink" title="1.全局变量"></a>1.全局变量</h4><p>JavaScript以一种有趣的方式来处理未声明的变量：当引用未声明的变量时，会在全局对象中创建一个新变量。在浏览器中，全局对象将是window，这意味着</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function foo(arg)&#123;</span><br><span class="line">	bar = &quot;some text&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相当于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function foo(arg)&#123;</span><br><span class="line">	window.bar = &quot;some text&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cja9opb6q0000xeyo5dhjfgx7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-pug模板" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/11/18/pug模板/" class="article-date">
@@ -105,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cja5502oo0001qeyoq3ie0ok4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cja9opb6z0003xeyo4umnojid" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cja5502ou0006qeyou2gwknr5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cja9opb720006xeyolbaq1uqs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -182,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja5502ok0000qeyodmgl52dk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cja9opb6w0001xeyoii3i2jh8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +261,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja5502ot0005qeyo8r9lelv5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cja9opb720007xeyo1zsk2f1c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -265,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja5502oq0002qeyo665q8ic6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cja9opb6y0002xeyofr7p1li9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja5502or0003qeyolnythzya" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cja9opb700004xeyokrgtnsi4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -353,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja5502os0004qeyo88lebjao" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cja9opb710005xeyo5niqdtpv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -399,7 +442,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cja5502ov0007qeyow3uitrvp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cja9opb730008xeyob2gaq2t8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,6 +482,10 @@
       <ul>
         
           <li>
+            <a href="/2017/11/21/JavaScript中的内存泄漏以及如何处理/">JavaScript中的内存泄漏以及如何处理</a>
+          </li>
+        
+          <li>
             <a href="/2017/11/18/pug模板/">pug模板</a>
           </li>
         
@@ -452,10 +499,6 @@
         
           <li>
             <a href="/2017/11/17/分页导航/">分页导航</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
           </li>
         
       </ul>

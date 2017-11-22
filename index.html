@@ -100,20 +100,20 @@
 <p>相当于：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function foo(arg)&#123;</span><br><span class="line">	window.bar = &quot;some text&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>bar只是foo函数中引用一个变量。如果你不适用var声明，将会创建u多余的全局变量。在上述情况下，不会造成很大的问题。但是，若是下面的这种情况。你可能不小心创建一个全局变量this：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">	this.val1 = &quot;potential accidental global&quot;;</span><br><span class="line">&#125;</span><br><span class="line">// Foo called on its own, this points to the global object (window)</span><br><span class="line">//rather than being undefined.</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo()&#123;</span><br><span class="line">	this.val1 = &quot;potential accidental global&quot;;</span><br><span class="line">&#125;</span><br><span class="line">// Foo called on its own, this points to the global object (window) rather than being undefined.</span><br><span class="line">foo();</span><br></pre></td></tr></table></figure>
 <p>你可以通过在JavaScript文件的开始处添加‘use strict’；来避免这种错误，这种方式将开启严格的解析JavaScript模式，从而防止意外创建全局变量。</p>
 <p>意外的全局变量当然是一个问题。更多的时候，你的代码会受到显示的全局变量的影响，而这些全局变量在垃圾收集器中是无法收集。需要特别注意用于临时存储和处理大量信息的全局变量。如果必须使用全局变量来存储数据，那么确保将其分配为空值，或者在完成后重新分配。</p>
 <h4 id="2-被遗忘的定时器或回调"><a href="#2-被遗忘的定时器或回调" class="headerlink" title="2.被遗忘的定时器或回调"></a>2.被遗忘的定时器或回调</h4><p>下面列举setInterval的例子，这也是经常在JavaScript中使用。</p>
 <p>对于提供监视的库和其他接收回调的工具，通常在确保所有回调的引用在其实例无法访问时，会变成无法访问的状态。但是下面的代码却是一个例外：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var serverData = loadData();</span><br><span class="line">setInterval(function()&#123;</span><br><span class="line">	var renderer = document.getElementById(&apos;render&apos;);</span><br><span class="line">	if(renderer)&#123;</span><br><span class="line">		renderer.innerHTML = JSON.stringify(serverData);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,5000);//This will be executed every ~5 seconds.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var serverData = loadData();</span><br><span class="line">setInterval(function()&#123;</span><br><span class="line">	var renderer = document.getElementById(&apos;render&apos;);</span><br><span class="line">	if(renderer)&#123;</span><br><span class="line">		renderer.innerHTML = JSON.stringify(serverData);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,5000); // This will be executed every ~5 seconds.</span><br></pre></td></tr></table></figure>
 <p>上面的代码片段显示了使用引用节点或不再需要的数据的定时器的结果。<br>该renderer对象可能会在某些时候被替换或删除，这会使interval处理程序封装的块变得冗余。如果发生这种情况，那么处理程序及其依赖项都不会被收集，因为interval需要先停止。这一切都归结为存储和处理负载数据的serverData不会被收集的原因。</p>
 <p>当使用监视器时，你需要确保做了一个明确的调用来删除它们。<br>幸运的是，大多数现代浏览器都会为你做这件事：即使你忘记删除监听器，当监测对象变得无法访问，它们就会自动收集监测处理器。这是过去的一些浏览器无法处理的情况（例如旧的IE6）。</p>
 <p>看下面的例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var element = document.getElementById(&apos;launch-button&apos;);</span><br><span class="line">var counter = 0;</span><br><span class="line">function onclick(event)&#123;</span><br><span class="line">	counter++;</span><br><span class="line">	element.innerHTML = &apos;text &apos;+ counter;</span><br><span class="line">&#125;</span><br><span class="line">element.addEventListener(&apos;click&apos;,onClick);</span><br><span class="line"></span><br><span class="line">//Do stuff </span><br><span class="line"></span><br><span class="line">element.removeEventListener(&apos;click&apos;,onClick);</span><br><span class="line">element.parentNode.removeChild(element);</span><br><span class="line"></span><br><span class="line">// Now when element goes out of scope,</span><br><span class="line">// both element and onClick will be collected event in old browsers //that don&apos;t handle cycles well.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var element = document.getElementById(&apos;launch-button&apos;);</span><br><span class="line">var counter = 0;</span><br><span class="line">function onclick(event)&#123;</span><br><span class="line">	counter++;</span><br><span class="line">	element.innerHTML = &apos;text &apos;+ counter;</span><br><span class="line">&#125;</span><br><span class="line">element.addEventListener(&apos;click&apos;,onClick);</span><br><span class="line"></span><br><span class="line">// Do stuff </span><br><span class="line"></span><br><span class="line">element.removeEventListener(&apos;click&apos;,onClick);</span><br><span class="line">element.parentNode.removeChild(element);</span><br><span class="line"></span><br><span class="line">// Now when element goes out of scope, both element and onClick will be collected event in old browsers that don&apos;t handle cycles well.</span><br></pre></td></tr></table></figure>
 <p>由于现代浏览器支持垃圾回收机制，所以当某个节点变得不能访问时，你不再需要调用removeEventListener,因为垃圾回收机制会恰当的处理这些节点。</p>
 <p>如果你正在使用jQueryAPI(其他库和框架也支持这一点)，那么也可以在节点不用之前删除监听器。即使应用程序在较旧的浏览器版本下运行，库也会确保没有内存泄露。</p>
 <h4 id="3-闭包"><a href="#3-闭包" class="headerlink" title="3.闭包"></a>3.闭包</h4><p>JavaScript开发的是一个关键方面是闭包。闭包是一个内部函数，可以访问外部（封闭函数）函数的变量。由于JavaScript运行时的实现细节，可能存在一下形式内存泄露：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var theThing = null;</span><br><span class="line">var replaceThing = function()&#123;</span><br><span class="line">	var originalThing = theThis;</span><br><span class="line">	var unused = function()&#123;</span><br><span class="line">		if(originalThing)//对‘originalThing’的引用</span><br><span class="line">		console.log(&apos;hi&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	theThing = &#123;</span><br><span class="line">		longStr: new Array (1000000).join(&apos;*&apos;),</span><br><span class="line">		someMethod: function()&#123;</span><br><span class="line">			console.log(&quot;message&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">setInterval(replaceThing,1000);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var theThing = null;</span><br><span class="line">var replaceThing = function()&#123;</span><br><span class="line">	var originalThing = theThis;</span><br><span class="line">	var unused = function()&#123;</span><br><span class="line">		if(originalThing) // 对‘originalThing’的引用</span><br><span class="line">		console.log(&apos;hi&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	theThing = &#123;</span><br><span class="line">		longStr: new Array (1000000).join(&apos;*&apos;),</span><br><span class="line">		someMethod: function()&#123;</span><br><span class="line">			console.log(&quot;message&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">setInterval(replaceThing,1000);</span><br></pre></td></tr></table></figure>
 <p>一旦replaceThing被调用，theThing会获取由一个大数组和一个新的闭包（someMthod）组成的新对象。然而，originalThing会被unused变量所持有的闭包所引用（这是theThing从以前的调用变量replaceThing）。需要记住的是，一旦在同一父作用域中为闭包创建了闭包的作用域，作用域就被共享了。</p>
 <p>在这种情况下，闭包创建的范围会将someMethod共享给unused。然而，unused有一个originalThing引用。即使unused从未使用过，someMethod也可以通过theThing在整个范围之外使用replaceThing。而且someMethod通过unused共享了闭包范围，unused必须引用originalThing以便使其它保持活跃（两封闭之间的整个共享范围）。这就阻止了它被收集。</p>
 <p>所有这些都可能导致相当大的内存泄露。当上面的代码片段一遍又一遍地运行时，你会看到内存使用率的不断上升。当垃圾收集器运行时，其内存大小不会缩小，这种情况会创建一个闭包的链表，并且每个闭包范围都带有对大数组的间接引用。</p>
@@ -125,7 +125,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjab2cy3u0000lmyor1ap8hqw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjab2gtjb0008qwyohv61nvsu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -171,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjab2cy440004lmyozffhe14p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjab2gtj10002qwyow09jw9r0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -210,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjab2cy460007lmyo95uzesah" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjab2gtj60006qwyo01e7wwk8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -248,7 +248,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjab2cy3z0001lmyovcfdimua" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjab2gtiv0000qwyoshzx4vxd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -284,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjab2cy450006lmyopqqiq04z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjab2gtj50005qwyoez5egd57" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjab2cy450005lmyom87gmwls" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjab2gtiz0001qwyo3spr4akj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -374,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cjab2cy420002lmyourjgbwyb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cjab2gtj30003qwyoy7ybzfne" class="article-share-link">Share</a>
       
       
     </footer>
@@ -419,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cjab2cy430003lmyoyhyxgn6y" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cjab2gtj40004qwyofyxwgi5b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cjab2cy4o0008lmyodr16jfhe" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cjab2gtj70007qwyoxq9pgxu5" class="article-share-link">Share</a>
       
       
     </footer>

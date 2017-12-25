@@ -69,6 +69,43 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-圆形进度条" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/25/圆形进度条/" class="article-date">
+  <time datetime="2017-12-25T12:21:17.000Z" itemprop="datePublished">2017-12-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/25/圆形进度条/">圆形进度条</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="canvas模拟进度条"><a href="#canvas模拟进度条" class="headerlink" title="canvas模拟进度条"></a>canvas模拟进度条</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.getElementById(&quot;mycanvas&quot;);</span><br><span class="line">		var context = canvas.getContext(&quot;2d&quot;);</span><br><span class="line">context.fillRect(0,0,canvas.width,canvas.height);</span><br><span class="line">		var _text = canvas.innerHTML;</span><br><span class="line">		var count = Number(_text.substr(0,_text.length-1))</span><br><span class="line">		console.log(count);</span><br><span class="line">		var i=0;</span><br><span class="line">		var timer = setInterval(function()&#123;</span><br><span class="line">			i++;</span><br><span class="line">			context.clearRect(0,0,100,100);</span><br><span class="line">			context.beginPath();</span><br><span class="line">			context.lineWidth = 2;</span><br><span class="line">			context.strokeStyle = &quot;lightgray&quot;;</span><br><span class="line">			context.arc(50,50,30,0,Math.PI*2);</span><br><span class="line">			context.stroke();</span><br><span class="line">			context.beginPath();</span><br><span class="line">			context.lineWidth = 2;</span><br><span class="line">			context.strokeStyle = &quot;lightgray&quot;;</span><br><span class="line">			context.arc(50,50,44,0,Math.PI*2);</span><br><span class="line">			context.stroke();</span><br><span class="line">			context.beginPath();</span><br><span class="line">			context.strokeStyle = &quot;darkgray&quot;;</span><br><span class="line">			context.arc(50,50,37,0,Math.PI*2);</span><br><span class="line">			context.lineWidth = 12;</span><br><span class="line">			context.stroke();</span><br><span class="line">			context.beginPath();</span><br><span class="line">			context.textBaseline = &quot;middle&quot;;</span><br><span class="line">			context.textAlign = &quot;center&quot;;</span><br><span class="line">			context.font = &quot;20px Arial&quot;;</span><br><span class="line">			context.fillStyle = &quot;#000000&quot;;</span><br><span class="line">			context.fillText(`$&#123;i&#125;%`,50,50);</span><br><span class="line">			context.beginPath();</span><br><span class="line">			var grd = context.createLinearGradient(0,0,0,100);</span><br><span class="line">			grd.addColorStop(0,&quot;red&quot;);</span><br><span class="line">			grd.addColorStop(0.25,&quot;yellow&quot;);</span><br><span class="line">			grd.addColorStop(0.5,&quot;green&quot;);</span><br><span class="line">			grd.addColorStop(0.75,&quot;pink&quot;);</span><br><span class="line">			grd.addColorStop(1,&quot;blue&quot;);</span><br><span class="line">			context.strokeStyle = grd;</span><br><span class="line">			context.arc(50,50,37,0,Math.PI*(i*2/100));</span><br><span class="line">			context.lineWidth = 12;</span><br><span class="line">			context.stroke();</span><br><span class="line">			if(i&gt;=count)&#123;</span><br><span class="line">				clearInterval(timer);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;,100)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbm84n530004yhyovk5gepvt" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-歌词同步歌曲" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/21/歌词同步歌曲/" class="article-date">
@@ -100,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbgjpd970008f3yog5atc70u" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbm84n58000ayhyo2ubrcxnq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -166,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbgjpd8s0000f3yoiyopktsb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbm84n520003yhyo0ubsr586" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbgjpd910002f3yohn9qzyxy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbm84n560008yhyo36y1wfqq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -251,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbgjpd960007f3you956blod" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbm84n560007yhyojurghjin" class="article-share-link">Share</a>
       
       
     </footer>
@@ -289,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbgjpd8z0001f3yo3537ubbw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbm84n4u0000yhyot9uvtvsi" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbgjpd950006f3yoq4dea7z0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbm84n550006yhyotzncgmrz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjbgjpd920003f3yociifdpl9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjbm84n510002yhyocowcpcaw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -415,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cjbgjpd930004f3youm7c6tdb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/14/仿写字符串对象/" data-id="cjbm84n4z0001yhyorjhin72a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -460,53 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cjbgjpd940005f3yon6xqti1a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-行、块、行块标签与盒模型" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/08/14/行、块、行块标签与盒模型/" class="article-date">
-  <time datetime="2017-08-14T14:06:59.000Z" itemprop="datePublished">2017-08-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/14/行、块、行块标签与盒模型/">行、块、行块标签与盒模型</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="块级标签-block-，行级标签-inline-，行块标签-inline-block"><a href="#块级标签-block-，行级标签-inline-，行块标签-inline-block" class="headerlink" title="块级标签(block)，行级标签(inline)，行块标签(inline-block):"></a>块级标签(block)，行级标签(inline)，行块标签(inline-block):</h3><h4 id="块级标签-block-的特点有："><a href="#块级标签-block-的特点有：" class="headerlink" title="块级标签(block)的特点有："></a>块级标签(block)的特点有：</h4><p>1.独占一行<br>2.可以设置尺寸<br>3.没有明确宽度和高度是，宽度由父级决定，高度由内容决定<br>4.支持margin和padding</p>
-<h4 id="行级标签-inline-的特点："><a href="#行级标签-inline-的特点：" class="headerlink" title="行级标签(inline)的特点："></a>行级标签(inline)的特点：</h4><p>1.不会独占一行，可以与其他行级元素同行排列<br>2.不支持尺寸设置<br>3.对左右margin和左右padding支持较好，上下margin和padding要慎用</p>
-<h4 id="行块标签-inline-block-的特点："><a href="#行块标签-inline-block-的特点：" class="headerlink" title="行块标签(inline-block)的特点："></a>行块标签(inline-block)的特点：</h4><p>支持盒模型，但不会独占一行</p>
-<h4 id="盒模型："><a href="#盒模型：" class="headerlink" title="盒模型："></a>盒模型：</h4><p>1.盒模型有外边距margin、边界border、内边距padding、内容尺寸(width/height)四个部分组成</p>
-<p>2.盒子模型分为标准盒模型与怪异盒模型</p>
-<h4 id="标准盒模型："><a href="#标准盒模型：" class="headerlink" title="标准盒模型："></a>标准盒模型：</h4><p>1.内容尺寸: width height </p>
-<p>2.盒子尺寸 : 内容尺寸 padding border</p>
-<p>3.区域尺寸：内容尺寸 padding border margin</p>
-<h4 id="怪异盒模型："><a href="#怪异盒模型：" class="headerlink" title="怪异盒模型："></a>怪异盒模型：</h4><pre><code>box-sizing: border-box / content-box;
-</code></pre><p>注意：盒子与盒子之间用margin 盒子内部用padding 盒子尺寸尽量用auto</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/08/14/行、块、行块标签与盒模型/" data-id="cjbgjpd980009f3youwbyften" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/13/仿写数组对象/" data-id="cjbm84n540005yhyocsgrmpx4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,6 +508,10 @@
 
   
 
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -546,6 +541,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/25/圆形进度条/">圆形进度条</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/21/歌词同步歌曲/">歌词同步歌曲</a>
           </li>
         
@@ -559,10 +558,6 @@
         
           <li>
             <a href="/2017/11/18/图片转换为base64编码的好处/">图片转换为base64编码的好处</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/17/json与jsonp的区别/">json与jsonp的区别</a>
           </li>
         
       </ul>

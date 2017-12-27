@@ -69,6 +69,44 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js中base64获取" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/12/27/js中base64获取/" class="article-date">
+  <time datetime="2017-12-27T13:43:52.000Z" itemprop="datePublished">2017-12-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/27/js中base64获取/">js中base64获取</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="js获取base64"><a href="#js获取base64" class="headerlink" title="js获取base64"></a>js获取base64</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;myfile&quot; onchange=&quot;sub()&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>js代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function sub()&#123;</span><br><span class="line">			var myfile = document.getElementById(&quot;myfile&quot;).files[0];</span><br><span class="line">			console.log(myfile);</span><br><span class="line">			var fileRead = new FileReader();</span><br><span class="line">			fileRead.readAsDataURL(myfile);</span><br><span class="line">			fileRead.onload = function(e)&#123;</span><br><span class="line">				console.log(e);</span><br><span class="line">				var base64 = e.target.result;</span><br><span class="line">				console.log(base64);</span><br><span class="line">				var img = new Image();</span><br><span class="line">				img.src = base64;</span><br><span class="line">				img.width = &quot;200&quot;;</span><br><span class="line">				document.getElementsByTagName(&quot;body&quot;)[0].appendChild(img);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/12/27/js中base64获取/" data-id="cjbp46m690004jkyopncu9hx3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-canvas五彩缤纷的小球" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/12/27/canvas五彩缤纷的小球/" class="article-date">
@@ -103,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/canvas五彩缤纷的小球/" data-id="cjbp3y04x0000iuyos0c7r9su" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/27/canvas五彩缤纷的小球/" data-id="cjbp46m650001jkyosxolnqzf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -139,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/canvas画线/" data-id="cjbp3y0520001iuyoeabyhuyp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/canvas画线/" data-id="cjbp46m670002jkyo6teg7ueu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbp3y05c0007iuyox3crbtgk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbp46m6f000bjkyowcr6o5c9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -219,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbp3y05h000biuyofachqbxj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbp46m6g000cjkyogxf6mish" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +323,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbp3y0590004iuyojuvttdx9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbp46m600000jkyotqhq36au" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +369,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbp3y0570003iuyotmoze87q" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbp46m6b0006jkyofxcc5id8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -370,7 +408,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbp3y05j000ciuyomec650lc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbp46m6e000ajkyop83opwvp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbp3y0550002iuyo3cvng3g2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbp46m680003jkyoc6ckib74" class="article-share-link">Share</a>
       
       
     </footer>
@@ -444,54 +482,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbp3y05f0009iuyo4m0eh2lp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-js事件兼容写法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/11/16/js事件兼容写法/" class="article-date">
-  <time datetime="2017-11-16T13:58:30.000Z" itemprop="datePublished">2017-11-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/js事件兼容写法/">js事件兼容写法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="js文件下载：https-github-com-liuyydi-public"><a href="#js文件下载：https-github-com-liuyydi-public" class="headerlink" title="js文件下载：https://github.com/liuyydi/public"></a>js文件下载：<font style="color: blue;"><a href="https://github.com/liuyydi/public" target="_blank" rel="external">https://github.com/liuyydi/public</a></font></h4><h3 id="绑定事件兼容各个浏览器的写法"><a href="#绑定事件兼容各个浏览器的写法" class="headerlink" title="绑定事件兼容各个浏览器的写法"></a><font style="color:#8d0000;">绑定事件兼容各个浏览器的写法</font></h3><h5 id="参数："><a href="#参数：" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">element：</font>代表要绑定事件的元素</p>
-<p><font style="color: #000088;">type：</font>要绑定的事件名，(不含“on”)</p>
-<p><font style="color: #000088;">fn：</font>绑定事件的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function addEvent(element,type,fn)&#123;</span><br><span class="line">	if(element.addEventListener)&#123;</span><br><span class="line">		element.addEventListener(type,fn,true);</span><br><span class="line">	&#125;else if(element.attachEvent)&#123;</span><br><span class="line">		element.attachEvent(&quot;on&quot;+type,fn);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		element[&quot;on&quot;+type]=fn;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="移除事件兼容各个浏览器的写法"><a href="#移除事件兼容各个浏览器的写法" class="headerlink" title="移除事件兼容各个浏览器的写法"></a><font style="color:#8d0000;">移除事件兼容各个浏览器的写法</font></h3><h5 id="参数：-1"><a href="#参数：-1" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">element：</font>代表要移除事件的元素</p>
-<p><font style="color: #000088;">type：</font>要要移除的事件名，(不含“on”)</p>
-<p><font style="color: #000088;">fn：</font>移除事件的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function removeEvent(element,type,fn)&#123;</span><br><span class="line">	if(element.removeEventListener)&#123;</span><br><span class="line">		element.removeEventListener(type,fn,false);</span><br><span class="line">	&#125;else if(element.detachEvent)&#123;</span><br><span class="line">		element.detachEvent(&quot;on&quot;+type,fn);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		element[&quot;on&quot;+type]=null;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="取消冒泡兼容各个浏览器的写法"><a href="#取消冒泡兼容各个浏览器的写法" class="headerlink" title="取消冒泡兼容各个浏览器的写法"></a><font style="color:#8d0000;">取消冒泡兼容各个浏览器的写法</font></h3><h5 id="参数：-2"><a href="#参数：-2" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">ev: </font>要取消冒泡的事件对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function stopBubble(ev)&#123;</span><br><span class="line">	if(ev &amp;&amp; ev.stopPropagation)&#123;</span><br><span class="line">		ev.stopPropagation();</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		ev.cancelBubble=true;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="获取计算后样式兼容的写法"><a href="#获取计算后样式兼容的写法" class="headerlink" title="获取计算后样式兼容的写法"></a><font style="color:#8d0000;">获取计算后样式兼容的写法</font></h3><h5 id="参数：-3"><a href="#参数：-3" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">element: </font>要获取样式的元素</p>
-<p><font style="color: #000088;">key: </font>要获取的样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getStyle(element,key,wei)&#123;</span><br><span class="line">	if(element.currentStyle)&#123;</span><br><span class="line">		return element.currentStyle[key];</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		if(wei==undefined)&#123;</span><br><span class="line">			wei=null;</span><br><span class="line">		&#125;</span><br><span class="line">		return getComputedStyle(element,wei)[key];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="滚轮事件兼容各个浏览器的写法"><a href="#滚轮事件兼容各个浏览器的写法" class="headerlink" title="滚轮事件兼容各个浏览器的写法"></a><font style="color:#8d0000;">滚轮事件兼容各个浏览器的写法</font></h3><h5 id="参数：-4"><a href="#参数：-4" class="headerlink" title="参数："></a><font style="color: #8d0080;">参数：</font></h5><p><font style="color: #000088;">ele: </font>要绑定滚轮事件的元素</p>
-<p><font style="color: #000088;">fn: </font>滚轮事件要执行的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function addMousewheel(ele,fn)&#123;</span><br><span class="line">	if(navigator.userAgent.indexOf(&quot;Firefox&quot;)!=-1)&#123;</span><br><span class="line">		// 火狐</span><br><span class="line">		ele.addEventListener(&quot;DOMMouseScroll&quot;,fn,false);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		// 谷歌、IE</span><br><span class="line">		ele.onmousewheel=fn;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjbp3y05b0006iuyof6gh1mp6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbp46m6e0009jkyoi5zsb8zh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -535,6 +526,10 @@
       <ul>
         
           <li>
+            <a href="/2017/12/27/js中base64获取/">js中base64获取</a>
+          </li>
+        
+          <li>
             <a href="/2017/12/27/canvas五彩缤纷的小球/">canvas五彩缤纷的小球</a>
           </li>
         
@@ -548,10 +543,6 @@
         
           <li>
             <a href="/2017/12/21/歌词同步歌曲/">歌词同步歌曲</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/21/JavaScript中的内存泄漏以及如何处理/">JavaScript中的内存泄漏以及如何处理</a>
           </li>
         
       </ul>

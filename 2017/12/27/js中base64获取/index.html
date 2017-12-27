@@ -5,17 +5,17 @@
   
   <title>js中base64获取 | 顽强的小美鹤</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js获取base641&amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;myfile&amp;quot; onchange=&amp;quot;sub()&amp;quot;/&amp;gt; js代码 123456789101112131415function sub()&amp;#123;			var myfile = document.getElementById(&amp;quot;myfile&amp;quot">
+  <meta name="description" content="js获取base64将图片转换为base64编码最常见的应用应该就是在将网页中的一些图片转换为base64编码可以实现网页图片在网速不好的时候先于内容加载和减少HTTP的请求次数来减少网站服务器的负担。 1&amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;myfile&amp;quot; onchange=&amp;quot;sub()&amp;quot;/&amp;gt; js代码 123456">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js中base64获取">
 <meta property="og:url" content="http://yoursite.com/2017/12/27/js中base64获取/index.html">
 <meta property="og:site_name" content="顽强的小美鹤">
-<meta property="og:description" content="js获取base641&amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;myfile&amp;quot; onchange=&amp;quot;sub()&amp;quot;/&amp;gt; js代码 123456789101112131415function sub()&amp;#123;			var myfile = document.getElementById(&amp;quot;myfile&amp;quot">
+<meta property="og:description" content="js获取base64将图片转换为base64编码最常见的应用应该就是在将网页中的一些图片转换为base64编码可以实现网页图片在网速不好的时候先于内容加载和减少HTTP的请求次数来减少网站服务器的负担。 1&amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;myfile&amp;quot; onchange=&amp;quot;sub()&amp;quot;/&amp;gt; js代码 123456">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-27T13:45:47.000Z">
+<meta property="og:updated_time" content="2017-12-27T13:47:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js中base64获取">
-<meta name="twitter:description" content="js获取base641&amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;myfile&amp;quot; onchange=&amp;quot;sub()&amp;quot;/&amp;gt; js代码 123456789101112131415function sub()&amp;#123;			var myfile = document.getElementById(&amp;quot;myfile&amp;quot">
+<meta name="twitter:description" content="js获取base64将图片转换为base64编码最常见的应用应该就是在将网页中的一些图片转换为base64编码可以实现网页图片在网速不好的时候先于内容加载和减少HTTP的请求次数来减少网站服务器的负担。 1&amp;lt;input type=&amp;quot;file&amp;quot; id=&amp;quot;myfile&amp;quot; onchange=&amp;quot;sub()&amp;quot;/&amp;gt; js代码 123456">
   
     <link rel="alternate" href="/atom.xml" title="顽强的小美鹤" type="application/atom+xml">
   
@@ -90,13 +90,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="js获取base64"><a href="#js获取base64" class="headerlink" title="js获取base64"></a>js获取base64</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;myfile&quot; onchange=&quot;sub()&quot;/&gt;</span><br></pre></td></tr></table></figure>
+        <h4 id="js获取base64"><a href="#js获取base64" class="headerlink" title="js获取base64"></a>js获取base64</h4><p>将图片转换为base64编码最常见的应用应该就是在将网页中的一些图片转换为base64编码可以实现网页图片在网速不好的时候先于内容加载和减少HTTP的请求次数来减少网站服务器的负担。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;myfile&quot; onchange=&quot;sub()&quot;/&gt;</span><br></pre></td></tr></table></figure>
 <p>js代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function sub()&#123;</span><br><span class="line">			var myfile = document.getElementById(&quot;myfile&quot;).files[0];</span><br><span class="line">			console.log(myfile);</span><br><span class="line">			var fileRead = new FileReader();</span><br><span class="line">			fileRead.readAsDataURL(myfile);</span><br><span class="line">			fileRead.onload = function(e)&#123;</span><br><span class="line">				console.log(e);</span><br><span class="line">				var base64 = e.target.result;</span><br><span class="line">				console.log(base64);</span><br><span class="line">				var img = new Image();</span><br><span class="line">				img.src = base64;</span><br><span class="line">				img.width = &quot;200&quot;;</span><br><span class="line">				document.getElementsByTagName(&quot;body&quot;)[0].appendChild(img);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/js中base64获取/" data-id="cjbp46m690004jkyopncu9hx3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/27/js中base64获取/" data-id="cjbp4858i0004jwyo99vqp9tj" class="article-share-link">Share</a>
       
       
     </footer>

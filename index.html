@@ -91,13 +91,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="js获取base64"><a href="#js获取base64" class="headerlink" title="js获取base64"></a>js获取base64</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;myfile&quot; onchange=&quot;sub()&quot;/&gt;</span><br></pre></td></tr></table></figure>
+        <h4 id="js获取base64"><a href="#js获取base64" class="headerlink" title="js获取base64"></a>js获取base64</h4><p>将图片转换为base64编码最常见的应用应该就是在将网页中的一些图片转换为base64编码可以实现网页图片在网速不好的时候先于内容加载和减少HTTP的请求次数来减少网站服务器的负担。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;myfile&quot; onchange=&quot;sub()&quot;/&gt;</span><br></pre></td></tr></table></figure>
 <p>js代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function sub()&#123;</span><br><span class="line">			var myfile = document.getElementById(&quot;myfile&quot;).files[0];</span><br><span class="line">			console.log(myfile);</span><br><span class="line">			var fileRead = new FileReader();</span><br><span class="line">			fileRead.readAsDataURL(myfile);</span><br><span class="line">			fileRead.onload = function(e)&#123;</span><br><span class="line">				console.log(e);</span><br><span class="line">				var base64 = e.target.result;</span><br><span class="line">				console.log(base64);</span><br><span class="line">				var img = new Image();</span><br><span class="line">				img.src = base64;</span><br><span class="line">				img.width = &quot;200&quot;;</span><br><span class="line">				document.getElementsByTagName(&quot;body&quot;)[0].appendChild(img);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/js中base64获取/" data-id="cjbp46m690004jkyopncu9hx3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/27/js中base64获取/" data-id="cjbp4858i0004jwyo99vqp9tj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/canvas五彩缤纷的小球/" data-id="cjbp46m650001jkyosxolnqzf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/27/canvas五彩缤纷的小球/" data-id="cjbp4858g0002jwyojkgai5r7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/canvas画线/" data-id="cjbp46m670002jkyo6teg7ueu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/canvas画线/" data-id="cjbp4858e0001jwyo0chlt3bs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +217,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbp46m6f000bjkyowcr6o5c9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbp4858p000bjwyon81vloo7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbp46m6g000cjkyogxf6mish" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbp4858q000cjwyozwxx90p4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -323,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbp46m600000jkyotqhq36au" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbp485890000jwyoa8f025qx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -369,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbp46m6b0006jkyofxcc5id8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbp4858k0006jwyo7421esnk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -408,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbp46m6e000ajkyop83opwvp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbp4858o000ajwyoy56gqqht" class="article-share-link">Share</a>
       
       
     </footer>
@@ -446,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbp46m680003jkyoc6ckib74" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbp4858h0003jwyomuta1jt9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -482,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbp46m6e0009jkyoi5zsb8zh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbp4858n0009jwyoj1e6u03r" class="article-share-link">Share</a>
       
       
     </footer>

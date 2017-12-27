@@ -91,13 +91,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="canvas动画–五彩缤纷的小球"><a href="#canvas动画–五彩缤纷的小球" class="headerlink" title="canvas动画–五彩缤纷的小球"></a>canvas动画–五彩缤纷的小球</h4><p><img src="http://upload-images.jianshu.io/upload_images/7426647-ed7ff4bd2c20083d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="alt关键字"></p>
+        <h4 id="canvas动画–五彩缤纷的小球"><a href="#canvas动画–五彩缤纷的小球" class="headerlink" title="canvas动画–五彩缤纷的小球"></a>canvas动画–五彩缤纷的小球</h4><p><img src="http://upload-images.jianshu.io/upload_images/7426647-ed7ff4bd2c20083d.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="五彩缤纷的小球wucaibinfen.gif"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.getElementById(&quot;mycanvas&quot;);</span><br><span class="line">var canvas = canvas.getContext(&quot;2d&quot;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/27/canvas五彩缤纷的小球/" data-id="cjbp23pd30000cpyozq4kfzwf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/27/canvas五彩缤纷的小球/" data-id="cjbp34jwv0001gxyo5mh4o882" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,7 +133,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/canvas画线/" data-id="cjbp23pda0002cpyoo30lj8ic" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/canvas画线/" data-id="cjbp34jx60008gxyoecghev77" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,13 +165,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="canvas模拟进度条"><a href="#canvas模拟进度条" class="headerlink" title="canvas模拟进度条"></a>canvas模拟进度条</h4><p>利用 canvas 圆形 arc() 和 js 定时器 setInterval()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.getElementById(&quot;mycanvas&quot;);</span><br><span class="line">var context = canvas.getContext(&quot;2d&quot;);</span><br><span class="line">context.fillRect(0,0,canvas.width,canvas.height);</span><br><span class="line">var _text = canvas.innerHTML;</span><br><span class="line">var count = Number(_text.substr(0,_text.length-1))</span><br><span class="line">console.log(count);</span><br><span class="line">var i=0;</span><br><span class="line">var timer = setInterval(function()&#123;</span><br><span class="line">	i++;</span><br><span class="line">	context.clearRect(0,0,100,100);</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.lineWidth = 2;</span><br><span class="line">	context.strokeStyle = &quot;lightgray&quot;;</span><br><span class="line">	context.arc(50,50,30,0,Math.PI*2);</span><br><span class="line">	context.stroke();</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.lineWidth = 2;</span><br><span class="line">	context.strokeStyle = &quot;lightgray&quot;;</span><br><span class="line">	context.arc(50,50,44,0,Math.PI*2);</span><br><span class="line">	context.stroke();</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.strokeStyle = &quot;darkgray&quot;;</span><br><span class="line">	context.arc(50,50,37,0,Math.PI*2);</span><br><span class="line">	context.lineWidth = 12;</span><br><span class="line">	context.stroke();</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.textBaseline = &quot;middle&quot;;</span><br><span class="line">	context.textAlign = &quot;center&quot;;</span><br><span class="line">	context.font = &quot;20px Arial&quot;;</span><br><span class="line">	context.fillStyle = &quot;#000000&quot;;</span><br><span class="line">	context.fillText(`$&#123;i&#125;%`,50,50);</span><br><span class="line">	context.beginPath();</span><br><span class="line">	var grd = context.createLinearGradient(0,0,0,100);</span><br><span class="line">	grd.addColorStop(0,&quot;red&quot;);</span><br><span class="line">	grd.addColorStop(0.25,&quot;yellow&quot;);</span><br><span class="line">	grd.addColorStop(0.5,&quot;green&quot;);</span><br><span class="line">	grd.addColorStop(0.75,&quot;pink&quot;);</span><br><span class="line">	grd.addColorStop(1,&quot;blue&quot;);</span><br><span class="line">	context.strokeStyle = grd;</span><br><span class="line">	context.arc(50,50,37,0,Math.PI*(i*2/100));</span><br><span class="line">	context.lineWidth = 12;</span><br><span class="line">	context.stroke();</span><br><span class="line">	if(i&gt;=count)&#123;</span><br><span class="line">		clearInterval(timer);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,100)</span><br></pre></td></tr></table></figure>
+        <p><img src="http://upload-images.jianshu.io/upload_images/7426647-01ec83c96730bfc3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="progress.gif"></p>
+<h4 id="canvas模拟进度条"><a href="#canvas模拟进度条" class="headerlink" title="canvas模拟进度条"></a>canvas模拟进度条</h4><p>利用 canvas 圆形 arc() 和 js 定时器 setInterval()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">var canvas = document.getElementById(&quot;mycanvas&quot;);</span><br><span class="line">var context = canvas.getContext(&quot;2d&quot;);</span><br><span class="line">context.fillRect(0,0,canvas.width,canvas.height);</span><br><span class="line">var _text = canvas.innerHTML;</span><br><span class="line">var count = Number(_text.substr(0,_text.length-1))</span><br><span class="line">console.log(count);</span><br><span class="line">var i=0;</span><br><span class="line">var timer = setInterval(function()&#123;</span><br><span class="line">	i++;</span><br><span class="line">	context.clearRect(0,0,100,100);</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.lineWidth = 2;</span><br><span class="line">	context.strokeStyle = &quot;lightgray&quot;;</span><br><span class="line">	context.arc(50,50,30,0,Math.PI*2);</span><br><span class="line">	context.stroke();</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.lineWidth = 2;</span><br><span class="line">	context.strokeStyle = &quot;lightgray&quot;;</span><br><span class="line">	context.arc(50,50,44,0,Math.PI*2);</span><br><span class="line">	context.stroke();</span><br><span class="line">	context.beginPath();</span><br><span class="line">	var arcgrd = context.createRadialGradient(50,50,30,50,50,44);</span><br><span class="line">	arcgrd.addColorStop(&quot;0&quot;,&quot;gray&quot;);</span><br><span class="line">	arcgrd.addColorStop(0.5,&quot;lightgray&quot;);</span><br><span class="line">	arcgrd.addColorStop(1,&quot;gray&quot;);</span><br><span class="line">	context.strokeStyle = arcgrd;</span><br><span class="line">	context.arc(50,50,37,0,Math.PI*2);</span><br><span class="line">	context.lineWidth = 12;</span><br><span class="line">	context.stroke();</span><br><span class="line">	context.beginPath();</span><br><span class="line">	context.textBaseline = &quot;middle&quot;;</span><br><span class="line">	context.textAlign = &quot;center&quot;;</span><br><span class="line">	context.font = &quot;20px Arial&quot;;</span><br><span class="line">	context.fillStyle = &quot;#000000&quot;;</span><br><span class="line">	context.fillText(`$&#123;i&#125;%`,50,50);</span><br><span class="line">	context.beginPath();</span><br><span class="line">	var grd = context.createLinearGradient(0,0,0,100);</span><br><span class="line">	grd.addColorStop(&quot;0&quot;,&quot;red&quot;);</span><br><span class="line">	grd.addColorStop(0.5,&quot;yellow&quot;);</span><br><span class="line">	grd.addColorStop(1,&quot;cyan&quot;);</span><br><span class="line">	context.strokeStyle = grd;</span><br><span class="line">	context.arc(50,50,37,0,Math.PI*(i*2/100));</span><br><span class="line">	context.lineWidth = 12;</span><br><span class="line">	context.stroke();</span><br><span class="line">	if(i&gt;=count)&#123;</span><br><span class="line">		clearInterval(timer);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;,100)</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbp23pdn000ccpyoa7n5sl50" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/25/圆形进度条/" data-id="cjbp34jx50007gxyoxn01oxc9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbp23pdj0009cpyo0qhidsd1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/12/21/歌词同步歌曲/" data-id="cjbp34jx70009gxyoukvln82r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbp23pdb0003cpyoj27x9rl7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/21/JavaScript中的内存泄漏以及如何处理/" data-id="cjbp34jwq0000gxyo9vllluvn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -324,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbp23pdl000bcpyo4uka0cze" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/pug模板/" data-id="cjbp34jx40006gxyomnsyv06f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -363,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbp23pdf0006cpyoatgu5fz5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/18/图片转换为base64编码的好处/" data-id="cjbp34jxa000bgxyolrhvmxpn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbp23pd80001cpyodpvddgac" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/json与jsonp的区别/" data-id="cjbp34jwy0002gxyo796mnj08" class="article-share-link">Share</a>
       
       
     </footer>
@@ -437,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbp23pdh0007cpyoo9i0e2ms" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/17/分页导航/" data-id="cjbp34jxb000cgxyovsai8a47" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,7 +485,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjbp23pdc0004cpyoqor3gay9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/11/16/js事件兼容写法/" data-id="cjbp34jx00003gxyo77i3vvku" class="article-share-link">Share</a>
       
       
     </footer>
